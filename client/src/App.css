@@ -1,0 +1,179 @@
+/* App.css - Global Styles (Fully Responsive) */
+/* ================================
+   GLOBAL STYLES - ADVANCED RESET
+   Responsive Typography & Base Elements
+================================ */
+
+/* CSS Reset + Box Sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+  --primary: #8c4a2f;
+  --secondary: #556b2f;
+  --bg: #f5f1e8;
+  --text-dark: #333;
+  --text-light: #fff;
+  --accent: #ffd9b3;
+  --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --radius-md: 12px;
+}
+
+/* Body Base */
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Container */
+.page {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Responsive Headings */
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(28px, 8vw, 48px);
+}
+
+h2 {
+  font-size: clamp(24px, 6vw, 36px);
+}
+
+h3 {
+  font-size: clamp(20px, 5vw, 28px);
+}
+
+/* Buttons Global */
+button {
+  background: var(--secondary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.25s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background: #3e4f1c;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Inputs Global */
+input, textarea, select {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid #ccc;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(140, 74, 47, 0.1);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Touch-Friendly Targets */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .page {
+    padding: 20px 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  input, textarea, select {
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 16px 12px;
+  }
+  
+  button {
+    padding: 8px 16px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

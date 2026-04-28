@@ -1,0 +1,143 @@
+/* UserMenu.css - Fully Responsive */
+/* ================================
+   USER MENU DROPDOWN - FULLY RESPONSIVE
+   Mobile & Desktop Optimized
+================================ */
+
+:root {
+  --dropdown-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --hover-bg: #f0f0f0;
+  --danger-hover: #ffebee;
+  --border-light: #eee;
+}
+
+.user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+/* Trigger Button */
+.user-menu-trigger {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+  border-radius: 40px;
+}
+
+.user-menu-trigger:hover {
+  color: #ff6b35;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Dropdown */
+.user-dropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--dropdown-shadow);
+  min-width: 240px;
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeInDown 0.2s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* User Info */
+.dropdown-user-info {
+  padding: 14px 18px;
+  background: #faf8f5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.dropdown-user-info small {
+  color: #666;
+  font-size: 0.75rem;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  display: block;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background: var(--hover-bg);
+  color: #ff6b35;
+}
+
+/* Logout Button */
+.logout-btn {
+  border-top: 1px solid var(--border-light);
+  color: #d32f2f;
+}
+
+.logout-btn:hover {
+  background: var(--danger-hover);
+  color: #c62828;
+}
+
+/* ========== Mobile Adjustments ========== */
+@media (max-width: 768px) {
+  .user-menu {
+    width: 100%;
+  }
+  
+  .user-menu-trigger {
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 12px;
+    background: #f5f5f5;
+  }
+  
+  .user-dropdown {
+    position: static;
+    box-shadow: none;
+    border: 1px solid var(--border-light);
+    margin-top: 8px;
+    width: 100%;
+    animation: none;
+  }
+  
+  .dropdown-item {
+    padding: 14px 18px;
+  }
+}
+
+/* Touch-friendly */
+.user-menu-trigger,
+.dropdown-item {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,302 @@
+/* Menu.css - Fully Responsive */
+/* ================================
+   MENU PAGE - PREMIUM RESPONSIVE
+   Sticky Categories, Fluid Grid, Touch Controls
+================================ */
+
+:root {
+  --primary: #8c4a2f;
+  --secondary: #556b2f;
+  --cream: #f9f5ef;
+  --text-dark: #333;
+  --text-muted: #666;
+  --radius: 14px;
+  --transition: 0.25s ease;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Page Container (Mobile First) */
+.menu-page {
+  padding: 24px 16px;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: var(--cream);
+}
+
+/* Title */
+.menu-title {
+  text-align: center;
+  font-size: clamp(28px, 7vw, 42px);
+  color: var(--primary);
+  margin-bottom: 32px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* Menu Section */
+.menu-section {
+  margin-bottom: 48px;
+}
+
+/* Category Title (Sticky) */
+.category-title {
+  font-size: clamp(20px, 5vw, 28px);
+  color: var(--secondary);
+  margin-bottom: 20px;
+  border-left: 5px solid var(--primary);
+  padding-left: 14px;
+  position: sticky;
+  top: 70px;
+  background: var(--cream);
+  z-index: 5;
+  backdrop-filter: blur(4px);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Grid Layout */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+/* Card */
+.menu-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Image */
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.menu-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Content */
+.menu-content {
+  padding: 18px;
+}
+
+/* Header (Name + Price) */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.menu-header h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin: 0;
+  font-weight: 600;
+}
+
+.price {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+/* Description */
+.menu-content p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+/* Veg Badge */
+.veg-badge {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.7rem;
+  color: green;
+  font-weight: 700;
+  background: #e8f5e9;
+  padding: 3px 10px;
+  border-radius: 30px;
+}
+
+/* Add Button */
+.add-btn {
+  margin-top: 14px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 40px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.add-btn:hover {
+  background: #6d3520;
+  transform: translateY(-2px);
+}
+
+/* Quantity Controls */
+.qty-controls {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3eee9;
+  padding: 6px;
+  border-radius: 50px;
+  gap: 8px;
+}
+
+.qty-controls button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 40px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.qty-controls button:hover {
+  background: #6d3520;
+  transform: scale(1.05);
+}
+
+.qty-controls span {
+  font-weight: 700;
+  font-size: 1rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* ========== RESPONSIVE ========== */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .menu-page {
+    padding: 30px 20px;
+  }
+  
+  .menu-grid {
+    gap: 20px;
+  }
+  
+  .category-title {
+    top: 60px;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .menu-page {
+    padding: 20px 12px;
+  }
+  
+  .category-title {
+    top: 60px;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+  
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  
+  .menu-card img {
+    height: 170px;
+  }
+  
+  .menu-content {
+    padding: 14px;
+  }
+  
+  .menu-header h3 {
+    font-size: 1rem;
+  }
+  
+  .price {
+    font-size: 1rem;
+  }
+  
+  .qty-controls button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .menu-page {
+    padding: 16px 10px;
+  }
+  
+  .menu-title {
+    margin-bottom: 24px;
+  }
+  
+  .category-title {
+    position: static;
+    margin-top: 20px;
+    top: auto;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .menu-card img {
+    height: 200px;
+  }
+  
+  .add-btn,
+  .qty-controls button {
+    padding: 10px;
+  }
+}
+
+/* Touch-friendly */
+.add-btn,
+.qty-controls button,
+.menu-card {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .menu-card,
+  .add-btn,
+  .qty-controls button {
+    transition: none;
+    transform: none;
+  }
+  
+  .menu-card:hover img {
+    transform: none;
+  }
+}

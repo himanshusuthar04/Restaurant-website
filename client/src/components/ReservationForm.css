@@ -1,0 +1,192 @@
+/* ReservationForm.css - Fully Responsive */
+/* ================================
+   RESERVATION FORM - FULLY RESPONSIVE
+   Glass Morphism, Mobile-First Grid, Touch Friendly
+================================ */
+
+:root {
+  --primary: #8c4a2f;
+  --primary-dark: #6d3520;
+  --bg-gradient: linear-gradient(135deg, #f9f5ef, #f3e7da);
+  --text-dark: #333;
+  --border-light: #ddd;
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  --radius-card: 24px;
+}
+
+/* Container */
+.reservation-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background: var(--bg-gradient);
+}
+
+/* Form Card */
+.reservation-form {
+  width: 100%;
+  max-width: 720px;
+  padding: 32px 24px;
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.reservation-form:hover {
+  transform: translateY(-4px);
+}
+
+/* Title */
+.reservation-form h2 {
+  text-align: center;
+  color: var(--primary);
+  font-size: clamp(24px, 6vw, 32px);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* Form Grid (Mobile First) */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border-light);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+  background: white;
+  width: 100%;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(140, 74, 47, 0.15);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(140, 74, 47, 0.4);
+}
+
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========== Responsive Grid ========== */
+/* Tablet and up */
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  textarea {
+    grid-column: span 2;
+  }
+  
+  .reservation-form {
+    padding: 40px 36px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .reservation-container {
+    padding: 50px;
+  }
+  
+  .reservation-form {
+    padding: 48px 44px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .reservation-container {
+    padding: 20px 12px;
+  }
+  
+  .reservation-form {
+    padding: 24px 16px;
+  }
+  
+  input,
+  select,
+  textarea {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+  
+  button {
+    padding: 12px;
+  }
+}
+
+/* Touch-friendly */
+input, select, textarea, button {
+  -webkit-appearance: none;
+  touch-action: manipulation;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .reservation-form {
+    transition: none;
+    transform: none;
+  }
+  
+  button:hover:not(:disabled) {
+    transform: none;
+  }
+}

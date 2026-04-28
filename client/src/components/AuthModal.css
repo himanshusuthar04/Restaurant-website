@@ -1,0 +1,203 @@
+/* AuthModal.css - Fully Responsive */
+/* ================================
+   AUTH MODAL - FULLY RESPONSIVE
+   Improved Touch & Mobile Experience
+================================ */
+
+:root {
+    --modal-overlay: rgba(0, 0, 0, 0.6);
+    --modal-bg: #ffffff;
+    --primary: #ff6b35;
+    --primary-hover: #e55a2b;
+    --border-light: #ddd;
+    --error-bg: #ffebee;
+    --error-text: #c62828;
+  }
+  
+  /* Overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--modal-overlay);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    padding: 16px;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background: var(--modal-bg);
+    padding: 28px 20px;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Close Button */
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #999;
+    transition: 0.2s;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 50%;
+  }
+  
+  .modal-close:hover {
+    color: var(--primary);
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Tabs */
+  .react-tabs__tab-list {
+    border-bottom: 2px solid var(--border-light);
+    margin-bottom: 1.8rem;
+    display: flex;
+    gap: 8px;
+    padding: 0;
+  }
+  
+  .react-tabs__tab {
+    display: inline-block;
+    border: none;
+    list-style: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    transition: 0.2s;
+    border-radius: 40px;
+  }
+  
+  .react-tabs__tab--selected {
+    background: var(--primary);
+    color: white;
+    border-radius: 40px;
+  }
+  
+  /* Form Elements */
+  .modal-content input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 1.2rem;
+    border: 1.5px solid var(--border-light);
+    border-radius: 14px;
+    font-size: 1rem;
+    transition: 0.2s;
+  }
+  
+  .modal-content input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  }
+  
+  .modal-content button[type="submit"] {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: 0.2s;
+  }
+  
+  .modal-content button[type="submit"]:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+  
+  /* Auth Error */
+  .auth-error {
+    background: var(--error-bg);
+    color: var(--error-text);
+    padding: 12px;
+    border-radius: 14px;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    border-left: 4px solid var(--error-text);
+  }
+  
+  /* Mobile (<= 768px) */
+  @media (max-width: 768px) {
+    .modal-content {
+      padding: 24px 16px;
+      max-width: 95%;
+      border-radius: 24px;
+    }
+    
+    .react-tabs__tab {
+      padding: 10px 16px;
+      font-size: 0.9rem;
+    }
+    
+    .modal-content input {
+      padding: 12px 14px;
+      font-size: 0.95rem;
+    }
+    
+    .modal-close {
+      top: 12px;
+      right: 16px;
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Small Mobile (<= 480px) */
+  @media (max-width: 480px) {
+    .modal-content {
+      padding: 20px 14px;
+    }
+    
+    .react-tabs__tab-list {
+      gap: 4px;
+    }
+    
+    .react-tabs__tab {
+      padding: 8px 14px;
+      font-size: 0.85rem;
+    }
+    
+    .modal-content input {
+      padding: 10px 12px;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .modal-content {
+      animation: none;
+    }
+  }
