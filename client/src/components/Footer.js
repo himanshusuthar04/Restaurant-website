@@ -26,7 +26,7 @@ function Footer() {
         <div className="footer-section">
           <h4>Opening Hours</h4>
           <p>Mon - Fri: 10 AM - 11 PM</p>
-          <p>Sat - Sun: 9 AM - 12 AM</p>
+          <p>Sat - Sun: 1 PM - 12 AM</p>
         </div>
 
         {/* Map */}

@@ -23,7 +23,7 @@ body {
 /* Navbar Base (Fallback) */
 .navbar {
   background: #8c4a2f;
-  color: white;
+  /* color: white; */
   display: flex;
   justify-content: space-between;
   align-items: center;

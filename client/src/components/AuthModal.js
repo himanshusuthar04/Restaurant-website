@@ -20,7 +20,7 @@ const AuthModal = ({ isOpen, onClose, onSuccess }) => {
     setError("");
     setLoading(true);
     try {
-      const result = await login(email, password); // ✅ await here
+      const result = await login(email, password); 
       if (result.success) {
         onSuccess(); // trigger order placement
         onClose();

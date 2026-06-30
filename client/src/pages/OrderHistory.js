@@ -64,8 +64,8 @@ const OrderHistory = () => {
                 <span>{formatDate(order.createdAt || order.orderDate)}</span>
               </div>
               <div className="order-status">
-                <span className={`status-badge ${order.status || "pending"}`}>
-                  {order.status || "Pending"}
+                <span className={`status-badge ${order.status || "Ordered"}`}>
+                  {order.status || "Ordered"}
                 </span>
               </div>
             </div>

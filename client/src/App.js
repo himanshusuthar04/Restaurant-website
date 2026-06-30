@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { CartProvider } from "./context/CartContext"; // ✅ import CartProvider
+import { CartProvider } from "./context/CartContext"; 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 

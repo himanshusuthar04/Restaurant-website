@@ -111,14 +111,14 @@
 
 .items-header {
   display: grid;
-  grid-template-columns: 3fr 0.8fr 1.2fr 1.2fr;
-  font-weight: 700;
-  color: #666;
-  border-bottom: 1px solid #e9e9e9;
-  padding-bottom: 0.6rem;
-  margin-bottom: 0.8rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
+    grid-template-columns: 4fr 1.8fr 1.4fr 0.2fr;
+    font-weight: 700;
+    color: #666;
+    border-bottom: 1px solid #e9e9e9;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }
 
 .order-item {

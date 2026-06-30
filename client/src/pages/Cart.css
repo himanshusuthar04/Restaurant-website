@@ -50,7 +50,7 @@
 /* Desktop Header (hidden on mobile) */
 .cart-header {
   display: grid;
-  grid-template-columns: 3fr 1fr 1.5fr 1.5fr 0.5fr;
+  grid-template-columns: 7.5fr 2fr 4.5fr 1.5fr 0.5fr;
   font-weight: 700;
   border-bottom: 2px solid #ddd;
   padding-bottom: 0.75rem;
