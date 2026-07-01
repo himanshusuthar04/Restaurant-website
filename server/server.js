@@ -12,10 +12,12 @@ connectDB();
 // CORS Configuration
 // =======================
 const allowedOrigins = [
-  "http://localhost:3000",
-  // Allow all Vercel deployments
-  /^https:\/\/.*\.vercel\.app$/,
-];
+    'http://localhost:3000',
+    // All Vercel preview + production URLs
+    /^https:\/\/.*\.vercel\.app$/,
+    // All Netlify URLs
+    /^https:\/\/.*\.netlify\.app$/
+  ];
 
 app.use(
   cors({
