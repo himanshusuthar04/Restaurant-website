@@ -37,10 +37,18 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (name, email, password, address) => {
     try {
-      const res = await API.post("/auth/signup", { name, email, password, address });
+      const res = await API.post("/auth/signup", {
+        name,
+        email,
+        password,
+        address,
+      });
       return { success: true, message: res.data.message };
     } catch (err) {
-      return { success: false, message: err.response?.data?.message || "Signup failed" };
+      return {
+        success: false,
+        message: err.response?.data?.message || "Signup failed",
+      };
     }
   };
 
@@ -53,8 +61,13 @@ export const AuthProvider = ({ children }) => {
         await loadUserOrders(res.data.user.email);
         return { success: true, message: res.data.message };
       }
+      // Fix 6: was missing this return — caused TypeError crash on wrong password
+      return { success: false, message: res.data.message || "Login failed" };
     } catch (err) {
-      return { success: false, message: err.response?.data?.message || "Login failed" };
+      return {
+        success: false,
+        message: err.response?.data?.message || "Login failed",
+      };
     }
   };
 
@@ -86,7 +99,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, orders, loading, signup, login, logout, saveOrder }}>
+    <AuthContext.Provider
+      value={{ user, orders, loading, signup, login, logout, saveOrder }}
+    >
       {children}
     </AuthContext.Provider>
   );

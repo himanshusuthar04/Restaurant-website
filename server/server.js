@@ -12,24 +12,19 @@ connectDB();
 // CORS Configuration
 // =======================
 const allowedOrigins = [
-    'http://localhost:3000',
-    // All Vercel preview + production URLs
-    /^https:\/\/.*\.vercel\.app$/,
-    // All Netlify URLs
-    /^https:\/\/.*\.netlify\.app$/
-  ];
+  "http://localhost:3000",
+  /^https:\/\/.*\.vercel\.app$/, // all Vercel preview + production URLs
+  /^https:\/\/.*\.netlify\.app$/, // all Netlify URLs
+];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin
-      // (Postman, curl, mobile apps, Render health checks)
+      // Allow requests with no origin (Postman, curl, Render health checks)
       if (!origin) return callback(null, true);
-
       const allowed = allowedOrigins.some((item) =>
         typeof item === "string" ? item === origin : item.test(origin)
       );
-
       if (allowed) {
         callback(null, true);
       } else {
@@ -40,8 +35,8 @@ app.use(
   })
 );
 
-// Middleware
-app.use(express.json());
+// Middleware — must come BEFORE routes
+app.use(express.json({ limit: "1mb" })); // Fix: add payload size limit
 
 // =======================
 // Routes
@@ -51,9 +46,9 @@ app.use("/api/reservations", require("./routes/reservationRoutes"));
 app.use("/api/contact", require("./routes/contactRoutes"));
 app.use("/api/orders", require("./routes/orderRoutes"));
 
-// Default Route
+// Default Route — used to test if server is alive
 app.get("/", (req, res) => {
-  res.send("API running...");
+  res.send("CozyBite API is running...");
 });
 
 // =======================
